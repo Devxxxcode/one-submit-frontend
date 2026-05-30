@@ -208,7 +208,7 @@ const Home = () => {
       <motion.div
         initial={{ y: -50 }}
         animate={{ y: 0 }}
-        className="w-full text-[#dfffe7] py-2 z-30 flex items-center justify-center border-b border-primary/20 bg-[#050806]/85 backdrop-blur-xl"
+        className="w-full text-[#d9e7f7] py-2 z-30 flex items-center justify-center border-b border-primary/20 bg-[#08111b]/85 backdrop-blur-xl"
         // style={{ boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)" }}
         transition={{ duration: 0.5 }}
       >
@@ -313,7 +313,7 @@ const Home = () => {
       `}</style>
 
       {/* Links Section */}
-      <div className="bg-[#09110c]/90 border-y border-white/10 md:py-12 py-6">
+      <div className="bg-[linear-gradient(90deg,rgba(8,17,27,0.96)_0%,rgba(14,18,32,0.94)_52%,rgba(29,17,31,0.94)_100%)] border-y border-white/10 md:py-12 py-6">
         <div className="container mx-auto grid grid-cols-4 md:flex justify-around md:flex-wrap md:gap-4 gap-2 px-4">
           {[
             { label: "Starting", icon: MdRestartAlt, route: starting },
@@ -331,7 +331,7 @@ const Home = () => {
               onClick={() => item.route && navigate(item.route)}
               className="bg-white/[0.06] cursor-pointer rounded-xl shadow p-3 w-auto h-auto md:w-[120px] md:h-[86px] text-center flex flex-col items-center justify-center border border-white/10 hover:border-primary/50 hover:bg-primary/10 transition-all"
             >
-              <item.icon className="text-2xl text-[#83FF90] mb-1" />
+              <item.icon className="text-2xl text-primary mb-1" />
               <p className="md:text-xs text-sm font-semibold text-gray-100">
                 {item.label}
               </p>
@@ -346,7 +346,7 @@ const Home = () => {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}
           transition={{ duration: 0.5 }}
-          className="fixed bottom-24 left-4 md:left-80 bg-primary text-white px-4 py-3 rounded-xl shadow-[0_18px_40px_rgba(34,197,94,0.25)] flex items-center cursor-pointer z-10 md:bottom-4"
+          className="fixed bottom-24 left-4 md:left-80 bg-primary text-white px-4 py-3 rounded-xl shadow-[0_18px_40px_rgba(110,216,255,0.22)] flex items-center cursor-pointer z-10 md:bottom-4"
           onClick={toggleWelcome}
           style={{
             width: showWelcome ? "auto" : "10px",
@@ -375,7 +375,7 @@ const Home = () => {
       <div className="container mx-auto pt-8 px-2 md:pb-4 pb-10">
         <div className="flex justify-between items-center mb-4">
           <div>
-            <p className="text-[#83FF90] text-sm font-semibold uppercase tracking-[0.18em]">
+            <p className="text-primary text-sm font-semibold uppercase tracking-[0.18em]">
               Campaign growth
             </p>
             <h2 className="text-2xl font-bold text-white">VIP Levels</h2>

@@ -46,19 +46,19 @@ function SideBarWeb() {
 
   const navClass = ({ isActive }) =>
     [
-      "group flex items-center gap-x-4 w-full px-5 py-3 rounded-xl transition-all duration-300",
+      "group flex items-center gap-x-4 w-full px-5 py-3.5 rounded-xl transition-all duration-300",
       isActive
-        ? "text-[#83FF90] bg-primary/15 border border-primary/40 font-bold shadow-[0_10px_28px_rgba(34,197,94,0.16)]"
-        : "text-gray-300 hover:bg-white/10 hover:text-white border border-transparent",
+        ? "text-primary bg-primary/15 border border-primary/40 font-semibold shadow-[0_16px_30px_rgba(10,19,32,0.32)]"
+        : "text-gray-300 hover:bg-white/5 hover:text-white border border-transparent",
     ].join(" ");
 
   return (
-    <div className="w-[240px] lg:w-[330px] bg-[#050806] px-4 py-6 hidden md:flex flex-col justify-between h-screen shadow-2xl overflow-y-auto border-r border-primary/25">
+    <div className="w-[240px] lg:w-[330px] px-4 py-6 hidden md:flex flex-col justify-between h-screen shadow-2xl overflow-y-auto border-r border-primary/25 bg-[linear-gradient(180deg,rgba(7,16,26,0.98)_0%,rgba(9,15,27,0.96)_46%,rgba(19,19,34,0.98)_100%)]">
       {/* Logo */}
       <motion.div
         initial={zoomIn(1, "min").initial}
         whileInView={zoomIn(1, "min").animate}
-        className="rounded-2xl border border-white/10 bg-white/[0.03] p-4 shadow-[0_18px_40px_rgba(0,0,0,0.22)]"
+        className="rounded-2xl border border-white/10 bg-white/[0.04] p-4 shadow-[0_20px_48px_rgba(0,0,0,0.28)]"
       >
         <img src={logo} alt="Logo" className="h-auto w-40" />
       </motion.div>
@@ -131,7 +131,7 @@ function SideBarWeb() {
                 className={`text-lg cursor-pointer mr-1 ${unreadNotifications > 0 ? "shake" : ""}`}
               />
               {unreadNotifications > 0 && (
-                <span className=" bg-green-500 p-3 absolute -top-5 -right-2 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center animate-pulse">
+                <span className="bg-primary p-3 absolute -top-5 -right-2 text-white text-xs rounded-full w-4 h-4 flex items-center justify-center animate-pulse shadow-[0_10px_18px_rgba(110,216,255,0.28)]">
                   {unreadNotifications}
                 </span>
               )}
@@ -184,7 +184,7 @@ function SideBarWeb() {
       <motion.button
         initial={slideIn("up", null).initial}
         whileInView={slideIn("up", 2).animate}
-        className="flex items-center gap-x-3 py-3 px-4 text-red-300 hover:bg-red-500/10 rounded-xl border border-red-500/15 transition"
+        className="flex items-center gap-x-3 py-3 px-4 text-red-200 hover:bg-red-500/10 rounded-xl border border-red-500/15 transition bg-white/[0.02]"
         onClick={handleLogout} // Add the logout handler here
       >
         <CiLogout className="text-2xl" />

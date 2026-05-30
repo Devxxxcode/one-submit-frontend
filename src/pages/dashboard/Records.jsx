@@ -253,8 +253,13 @@ const Records = () => {
                                                     </div>
                                                     <div>
                                                         <p className="text-gray-500 text-xs md:text-sm">Commission</p>
-                                                        <p className="text-sm md:text-lg font-bold text-primary">
+                                                        <p className="text-sm md:text-lg font-bold text-primary flex items-center">
                                                             USD {record.commission}
+                                                            {record.commission_percentage && (
+                                                                <span className="text-xs text-gray-500 font-medium ml-2 bg-gray-100 px-2 py-0.5 rounded-full border border-gray-200">
+                                                                    {record.commission_percentage}%
+                                                                </span>
+                                                            )}
                                                         </p>
                                                     </div>
                                                 </div>

@@ -386,15 +386,15 @@
 }
 
 .dashboard-shell {
-  --dashboard-bg: #050806;
-  --dashboard-panel: rgba(255, 255, 255, 0.065);
-  --dashboard-panel-solid: #101912;
-  --dashboard-panel-soft: rgba(131, 255, 144, 0.08);
-  --dashboard-border: rgba(255, 255, 255, 0.12);
-  --dashboard-border-strong: rgba(131, 255, 144, 0.34);
+  --dashboard-bg: #223128;
+  --dashboard-panel: rgba(255, 255, 255, 0.12);
+  --dashboard-panel-solid: #2d3e34;
+  --dashboard-panel-soft: rgba(131, 255, 144, 0.15);
+  --dashboard-border: rgba(255, 255, 255, 0.18);
+  --dashboard-border-strong: rgba(131, 255, 144, 0.45);
   --dashboard-text: #f4fff6;
-  --dashboard-muted: #c6d2c9;
-  --dashboard-subtle: #94a39a;
+  --dashboard-muted: #dce3dd;
+  --dashboard-subtle: #b4c2b9;
   --dashboard-green: #22c55e;
   --dashboard-lime: #83ff90;
   background: var(--dashboard-bg);
@@ -403,14 +403,14 @@
 
 .dashboard-shell .flex-1 {
   background:
-    radial-gradient(circle at 18% 0%, rgba(34, 197, 94, 0.18), transparent 26rem),
-    radial-gradient(circle at 86% 10%, rgba(190, 74, 74, 0.12), transparent 22rem),
-    linear-gradient(145deg, #050806 0%, #0a130d 45%, #120c16 100%);
+    radial-gradient(circle at 18% 0%, rgba(34, 197, 94, 0.25), transparent 26rem),
+    radial-gradient(circle at 86% 10%, rgba(190, 74, 74, 0.15), transparent 22rem),
+    linear-gradient(145deg, #223128 0%, #2a3c30 45%, #2f4538 100%);
 }
 
 .dashboard-shell .nav-bar,
 .dashboard-shell .fixed.bottom-0 {
-  background-color: rgba(5, 8, 6, 0.92) !important;
+  background-color: rgba(34, 49, 40, 0.92) !important;
   backdrop-filter: blur(16px);
 }
 
@@ -431,18 +431,18 @@
 }
 
 .dashboard-shell .from-gray-50 {
-  --tw-gradient-from: #07110a var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(7, 17, 10, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-from: #223128 var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(34, 49, 40, 0) var(--tw-gradient-to-position) !important;
 }
 
 .dashboard-shell .to-white,
 .dashboard-shell .to-gray-100 {
-  --tw-gradient-to: #120c16 var(--tw-gradient-to-position) !important;
+  --tw-gradient-to: #2f4538 var(--tw-gradient-to-position) !important;
 }
 
 .dashboard-shell .via-gray-100 {
-  --tw-gradient-to: rgba(16, 25, 18, 0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), #152118 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
+  --tw-gradient-to: rgba(45, 62, 52, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), #2a3c30 var(--tw-gradient-via-position), var(--tw-gradient-to) !important;
 }
 
 .dashboard-shell .bg-primary {
@@ -522,7 +522,7 @@
 }
 
 .dashboard-shell :is(input, textarea, select) {
-  background-color: rgba(5, 8, 6, 0.74) !important;
+  background-color: rgba(34, 49, 40, 0.74) !important;
   border-color: var(--dashboard-border-strong) !important;
   color: var(--dashboard-text) !important;
 }

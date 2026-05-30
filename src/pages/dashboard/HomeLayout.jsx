@@ -31,7 +31,7 @@ const HomeLayout = () => {
           </div>
           <div className="flex items-center justify-center space-x-2 text-primary">
             <a href={`${home}/${profileRoute}`} className="flex">
-              <span className="text-lg font-medium">
+              <span className="text-lg font-medium text-white">
                 {profile?.first_name || ""}
               </span>
               {profile?.profile_picture ? (

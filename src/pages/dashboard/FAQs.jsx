@@ -125,7 +125,7 @@ const FAQs = () => {
                     <h2 className="text-2xl font-semibold text-gray-800">5. Combination Music Albums</h2>
                 </div>
                 <ul className="ml-8 list-disc list-inside space-y-2">
-                    <li>(5.1) Users will receive 12x~48x commission for each completed combination music album.</li>
+                    <li>(5.1) Users will receive 6-12 commission for each completed combination music album.</li>
                     <li>(5.2) When you receive the combination music album data, all funds will be used to submit the combination album transaction, and after you complete the data submission of each album in the combination album, the funds will be returned to your account balance.</li>
                     <li>(5.3) The system will randomly assign combination music albums based on the total balance of the user's account.</li>
                 </ul>

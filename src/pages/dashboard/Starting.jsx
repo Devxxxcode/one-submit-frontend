@@ -80,6 +80,7 @@ const Starting = () => {
     const dispatch = useDispatch();
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isStartActionLoading, setIsStartActionLoading] = useState(false);
     const [selectedStar, setSelectedStar] = useState(5);
     const [comments, setComments] = useState("");
     const [shuffledProducts, setShuffledProducts] = useState([]);
@@ -299,27 +300,32 @@ const Starting = () => {
     };
 
     const handleButtonClick = async () => {
-        if (!currentGame || Object.keys(currentGame).length === 0) {
-            const response = await dispatch(fetchCurrentGame());
-            console.log("response", response)
-            if (response.success) {
-                const special_product = response?.data?.special_product
-                if (special_product) {
-                    // Fetch profile again to show updated balance (including negative balance)
+        setIsStartActionLoading(true);
+        try {
+            let gameToUse = currentGame;
+
+            if (!gameToUse || Object.keys(gameToUse).length === 0) {
+                const response = await dispatch(fetchCurrentGame());
+                console.log("response", response)
+                if (!response?.success) {
+                    ErrorHandler(response?.message || "Failed to fetch current game.");
+                    return;
+                }
+                gameToUse = response?.data;
+                if (gameToUse?.special_product) {
                     await fetchProfile();
-                    
-                    // Show SweetAlert that covers the modal
                     await showSpecialAlbumAlert();
                 }
             }
-        }
-        toggleModal(); // Call toggleModal after fetching game data
-        if (currentGame && currentGame.special_product) {
-            // Fetch profile again to show updated balance (including negative balance)
-            await fetchProfile();
-            
-            // Show SweetAlert that covers the modal
-            await showSpecialAlbumAlert();
+
+            toggleModal();
+
+            if (gameToUse?.special_product && currentGame && Object.keys(currentGame).length > 0) {
+                await fetchProfile();
+                await showSpecialAlbumAlert();
+            }
+        } finally {
+            setIsStartActionLoading(false);
         }
     };
 
@@ -840,10 +846,11 @@ const Starting = () => {
                 <div className="flex justify-center items-center w-full h-full">
                   <motion.button
                     onClick={handleButtonClick}
+                    disabled={isStartActionLoading || isLoading_current}
                     whileHover={{ scale: 1.05 }}
-                    className="bg-primary text-white font-semibold rounded-full flex items-center justify-center shadow-lg text-sm sm:text-base md:text-lg lg:text-xl start-button"
+                    className="bg-primary text-white font-semibold rounded-full flex items-center justify-center shadow-lg text-sm sm:text-base md:text-lg lg:text-xl start-button disabled:opacity-70 disabled:cursor-not-allowed"
                   >
-                    Start
+                    {isStartActionLoading || isLoading_current ? "Loading..." : "Start"}
                   </motion.button>
                 </div>
 
@@ -930,9 +937,14 @@ const Starting = () => {
         </div>
 
         {/* Current Game Loading */}
-        {isLoading_current && (
+        {(isLoading_current || isStartActionLoading) && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[999999]">
-            <ResponsiveSpinner size="lg" />
+            <div className="flex flex-col items-center gap-4">
+              <ResponsiveSpinner size="lg" />
+              <p className="text-white text-sm md:text-base font-medium">
+                Loading your task...
+              </p>
+            </div>
           </div>
         )}
 

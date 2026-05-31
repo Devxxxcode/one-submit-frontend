@@ -37,7 +37,7 @@ const productSlice = createSlice({
             state.error_msg = action.payload.message
         },
         fetchCurrentGameFailure(state, action) {
-            state.isLoading = false;
+            state.isLoading_current = false;
             state.error = action.payload; // Store error
         },
 

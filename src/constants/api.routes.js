@@ -1,5 +1,5 @@
 
-export const BASEURL = "https://one-submit.onrender.com";
+export const BASEURL = "https://onesub-usyxzt3u.b4a.run";
 
 // export const BASEURL = "http://127.0.0.1:8000";
 

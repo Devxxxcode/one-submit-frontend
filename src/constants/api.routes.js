@@ -1,5 +1,5 @@
 
-export const BASEURL = "https://onesub-usyxzt3u.b4a.run";
+export const BASEURL = "https://onesub-3e3a6.containers.snapdeploy.app";
 
 // export const BASEURL = "http://127.0.0.1:8000";
 
